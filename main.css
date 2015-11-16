@@ -129,7 +129,6 @@ div.inhoud {
 
 /* Inhoud */ 
 .twitter {
-    margin-left: 500px;
-    display: inline-block;
+    float: right;
 }
 /* ---------------- */
