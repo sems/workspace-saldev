@@ -16,6 +16,7 @@ body {
     margin: 0 auto;
     padding: 0;
     font-family: 'Product Sans', Arial, sans-serif;
+    font-size: 1em;
 }
 
 
@@ -36,7 +37,7 @@ a {
 
 /* DIV MENU */
 div.menu  {
-    font-size: 21px; 
+    font-size: 1.5em; 
     background-color: #AAAAAA; 
     width: 100%;
     border-top: #000000 .5px solid;
@@ -63,8 +64,12 @@ li {
 }
 
 a:hover { 
-    color: #000000; 
-    
+    color: #000000;
+    -webkit-animation: fadein 1s; 
+    -moz-animation: fadein 1s; 
+    -ms-animation: fadein 1s; 
+    -o-animation: fadein 1s; 
+    animation: fadein 1s;
 }
 
 .menu ul ul {
@@ -84,6 +89,7 @@ a:hover {
     background-color: #AAAAAA;
     z-index: 5;
     margin: 15px;
+
 }
 
 
@@ -127,7 +133,7 @@ div.inhoud {
 /* ---------------- */
 
 
-/* Inhoud */ 
+/* Non-Global */ 
 .twitter {
    display: inline-block;
 }
@@ -136,3 +142,43 @@ div.inhoud {
     display: inline-block;
 }
 /* ---------------- */
+
+
+/* Webkits */
+@keyframes fadein {
+    from { opacity: 0.2; }
+    to   { opacity: 1; }
+}
+
+@-moz-keyframes fadein {
+    from { opacity: 0.2; }
+    to   { opacity: 1; }
+}
+
+@-webkit-keyframes fadein {
+    from { opacity: 0.2; }
+    to   { opacity: 1; }
+}
+
+@-ms-keyframes fadein {
+    from { opacity: 0.2; }
+    to   { opacity: 1; }
+}
+
+@-o-keyframes fadein {
+    from { opacity: 0.2;}
+    to   { opacity: 1; }
+}
+/* ---------------- */
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
