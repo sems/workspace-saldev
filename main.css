@@ -129,6 +129,10 @@ div.inhoud {
 
 /* Inhoud */ 
 .twitter {
-    float: right;
+   display: inline-block;
+}
+
+.maps {
+    display: inline-block;
 }
 /* ---------------- */
