@@ -171,9 +171,23 @@ div.inhoud {
 }
 /* ---------------- */
     
-    
-    
-    
+.social {
+    height: 100px;
+    width: 100px;
+    filter: invert(1);
+}
+.social:hover {
+    -webkit-transition: all 400ms ease-out 0s;
+    -moz-transition: all 400ms ease-out 0s;
+    -o-transition: all 400ms ease-out 0s;
+    transition: all 1s ease-out 0s;
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(360deg);
+    filter: invert(1);
+}
     
     
     
