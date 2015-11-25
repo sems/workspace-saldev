@@ -141,23 +141,26 @@ div.inhoud {
 .maps {
     display: inline-block;
 }
-.twitter {
+/*Twitter-feed */ 
+.twitter-feed {
    display: inline-block;
 }
+
+/*Social Butons */
 .social {
     height: 100px;
     width: 100px;
     filter: invert(1);
 }
 .social:hover {
-    -webkit-transition: all 400ms ease-out 0s;
-    -moz-transition: all 400ms ease-out 0s;
-    -o-transition: all 400ms ease-out 0s;
+    -webkit-transition: all 1s ease-out 0s;
+    -moz-transition: all 1s ease-out 0s;
+    -o-transition: all 1s ease-out 0s;
     transition: all 1s ease-out 0s;
     -webkit-transform: rotateY(180deg);
-    -moz-transform: rotateY(180deg);
-    -ms-transform: rotateY(180deg);
-    -o-transform: rotateY(180deg);
+    -moz-transform: rotateY(360deg);
+    -ms-transform: rotateY(360deg);
+    -o-transform: rotateY(360deg);
     transform: rotateY(360deg);
     filter: invert(1);
 }
@@ -194,7 +197,22 @@ div.inhoud {
 /* ---------------- */
 
 
-
-    
+.nav li ul {
+    position:absolute;
+    left:0;
+    top:36px;
+    z-index:1;
+}
+.nav li ul li {
+    overflow:hidden;
+    max-height:0;
+    -webkit-transition:max-height 500ms ease;
+    -moz-transition:max-height 500ms ease;
+    -o-transition:max-height 500ms ease;
+    transition:max-height 500ms ease;
+}
+.nav ul > li:hover ul li {
+    max-height:150px;
+}
     
     
