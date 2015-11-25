@@ -7,7 +7,7 @@
         <link href='https://fonts.googleapis.com/css?family=Product+Sans' rel='stylesheet' type='text/css'>
         <script src="jquery-2.1.4.js"></script>
         <script type="text/javascript" src="main.js"></script>
-        <script type="text/javascript" src="http://cdn.saldev.nl/js/modernizr-2.8.3.min.js"></script>
+        
     </head>
         <body>
           <img src="img/logo.png" class="logo" alt="Sem" />     
@@ -41,20 +41,18 @@
             </div>
             <!--Alles wat onder deze comment komt te staan komt in de inhoud van de site-->
             <div class="inhoud" >
-                <div class="tekst"> 
-                    <div class="todo-invoer">
-                        <form action="#" class="todo">
-                            <h1>ToDo-Lijst</h1>
-                            <input type="text" name="todo" id="todo" value="" class="taak" placeholder="Plaats hier de Todo item!!"><br>
-                            <h2>Prioriteit:</h2>
-                            <h5>1<input id="prio" type="range" name="prioriteit" value="1" min="1" max="5" class="half-prio">5</h5><br>
-                            <input id="opslaan" type="submit" value="Toevoegen" class="half">
-                            <input id="clear" type="button" value="Clear" class="half">
-                            <input id="reset" type="button" value="Reset" class="half">
-                        </form>
+                <div class="tekst">  
+                    <div id="todo">
+                      <div id="lijst">
+                      </div>
+                         <form id="item-form">
+                              <h1>ToDo-Lijst</h1>
+                              <input type="text" id="omschrijving" name="omschrijving"/>
+                              <input type="submit" id="opslaan" name="opslaan" value="Voeg toe"/>
+                              <h2>Prioriteit:</h2>
+                              <h5>1<input id="prio" name="prioriteit" value="1" min="1" max="5" class="half-prio" type="range">5</h5><br>
+                          </form>
                     </div>
-
-        
                 </div>
                 <br>
                 <br>
