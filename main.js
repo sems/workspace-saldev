@@ -6,7 +6,6 @@ var getDefaultObject = function() {
     return {
         list: [],
         id: 0,
-        prio: 1,
     };
 };
 
@@ -16,12 +15,12 @@ var getDefaultObject = function() {
  * @param {object} todoObject  the todo-list object
  * @param {string} description description /todo task
  */
-var addTodoItem = function(todoObject, description){
+var addTodoItem = function(todoObject, description, prio){
     todoObject.id += 1;
-    
     todoObject.list.push({
         description: description,
-        id: todoObject.id
+        id: todoObject.id,
+        prio: prio
     });
 };
 
@@ -30,6 +29,8 @@ var addTodoItem = function(todoObject, description){
  * @param {object} todoObject the todo-object
  * @param {objec}  element    jQuery ibject referring to HTML element
  */
+
+
 var showTodoList = function(todoObject, element) {
     if (todoObject.list.length !== 0) {
         element.html('');
@@ -44,6 +45,8 @@ var showTodoList = function(todoObject, element) {
         }
     }
 };
+
+
 
 var saveTodoList = function(todoObject) {
     var asJsonString = JSON.stringify(todoObject);
@@ -83,9 +86,10 @@ $(document).ready(function() {
     var itemForm = $('#item-form');
     var descInput = $('#omschrijving');
     itemForm.submit(function() {
+        var Prioriteit = $('#prioriteit').val();
         var text = descInput.val();
         if(text.trim() !== "") {
-            addTodoItem(tempTodoObject, text);
+            addTodoItem(tempTodoObject, text, Prioriteit);
             showTodoList(tempTodoObject, htmlListElement); 
             saveTodoList(tempTodoObject);
             descInput.val('');

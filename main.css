@@ -214,5 +214,9 @@ div.inhoud {
 .nav ul > li:hover ul li {
     max-height:150px;
 }
-    
+
+.todo-item {
+    background-color: #00FF00;
+    border-style: solid;
+}
     
