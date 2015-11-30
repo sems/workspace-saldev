@@ -163,20 +163,21 @@ div.inhoud {
     transform: rotateY(360deg);
     filter: invert(1);
 }
+/* ---------------- */
+
 
 /* Klassenlijst */
 
 #klassenlijst {
-    
-    padding: 10px;
+    padding: .1%;
 }
 
 #klassenlijst > div{
     display: inline-block;
-    padding: 3px;
+    margin: .75%;
+    padding: .25%;
     background-color: #dadada;
     border: #444 3px solid;
-    
 }
 
 /* ---------------- */
@@ -226,7 +227,7 @@ div.inhoud {
 }
 
 .todo-item {
-    background-color: #00FF00;
+    background-color: #e4e4e4;
     border-style: solid;
 }
 
