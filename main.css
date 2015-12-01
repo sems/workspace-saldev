@@ -169,7 +169,7 @@ div.inhoud {
 /* Klassenlijst */
 
 #klassenlijst {
-    padding: .1%;
+    padding: 0.1px;
 }
 
 #klassenlijst > div{
@@ -178,6 +178,7 @@ div.inhoud {
     padding: .25%;
     background-color: #dadada;
     border: #444 3px solid;
+    
 }
 
 /* ---------------- */
