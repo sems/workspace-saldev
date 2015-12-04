@@ -1,132 +1,57 @@
-/**
-Get Default empty todo-list object.
-@return object empty todo-list.
-*/
-var getDefaultObject = function() {
-    return {
-        list: [],
-        id: 0,
-    };
-};
-
-
-/**
- * [[Description]]
- * @param {object} todoObject  the todo-list object
- * @param {string} description description /todo task
- */
-var addTodoItem = function(todoObject, description, prio){
-    todoObject.id += 1;
-    todoObject.list.push({
-        description: description,
-        id: todoObject.id,
-        prio: prio
-    });
-};
-
-/**
- * show the todo list in an element found with jQuery
- * @param {object} todoObject the todo-object
- * @param {objec}  element    jQuery ibject referring to HTML element
- */
-
-
-var showTodoList = function(todoObject, element) {
-    if (todoObject.list.length !== 0) {
-        element.html('');
-        
-        for(var itemIndex = 0; itemIndex < todoObject.list.length; itemIndex += 1) {
-            var currentItem = todoObject.list[itemIndex];
-            var newElement = $('<div class="todo-item"></div>');
-            var description = currentItem.description;
-            
-            newElement.text(description);
-            newElement.appendTo(element);
-        }
-    }
-};
-
-
-
-var saveTodoList = function(todoObject) {
-    var asJsonString = JSON.stringify(todoObject);
-    localStorage.setItem('tasks', asJsonString);
-};
-
-/**
- * loading 
- * @returns {[[Type]]} [[Description]]
- */
-var loadTodoList = function(){
-    var asJsonString = localStorage.getItem('tasks');
-    var todo = getDefaultObject();
-    if(typeof asJsonString === "string") {
-        try{
-            todo = JSON.parse(asJsonString);
-        } catch(exception) {
-            return todo;
-        }
-    }
-    
-    return todo;
-};
-
-
 $(document).ready(function() {
-    //Deze code wordt uitgevoerd wanneer alle Document Object Model klaar.
-    var tempTodoObject = loadTodoList();
-    var htmlListElement = $('#lijst');
-    
-    //addTodoItem(tempTodoObject, "Finsch my bloddy todo list")
-    //addTodoItem(tempTodoObject, "Arrive somewhat safely..")
-    
-    
-    showTodoList(tempTodoObject, htmlListElement);
-    
-    var itemForm = $('#item-form');
-    var descInput = $('#omschrijving');
-    itemForm.submit(function() {
-        var Prioriteit = $('#prioriteit').val();
-        var text = descInput.val();
-        if(text.trim() !== "") {
-            addTodoItem(tempTodoObject, text, Prioriteit);
-            showTodoList(tempTodoObject, htmlListElement); 
-            saveTodoList(tempTodoObject);
-            descInput.val('');
+    //The todo items that are already saved in localstorage are getting pulled out of it and getting displayed.
+    var print = function() {
+        //Getting the todo-string
+        var todoArray = JSON.parse(localStorage.getItem("todo"));
+        var arrayItems = todoArray.items;
+
+        console.log(arrayItems);
+        //The sort function
+        arrayItems.sort(function(a, b) {
+            return parseFloat(b.prio) - parseFloat(a.prio);
+        });
+        $("#output").empty();
+        //The todo-object are getting showed until there's nothing left
+        //They are getting showed of the in 'output' div
+        for(var i = 0; i < arrayItems.length; i++) {
+            $("#output").append('<div class="item">' + '<a href="https://www.google.nl/">Remove</a>' +'</div>');
         }
-        
-        return false;
-        
+    }
+
+
+
+    //Add item when Click event
+    //jQuery start searching for button
+    $("#toevoegenBttn").click(function() {
+        //The todo item is getting pulled out of localstorage
+        var todoArray = JSON.parse(localStorage.getItem("todo"));
+        //The Priority is getting searched in the HTML
+        var prio = $("#prio").val();
+        //jQuery is going to search for the description of the new element.
+        var text = $("#text").val();
+        //The new object contains: an id, text and priority.
+        var newObject = {
+            id: todoArray.nextId,
+            text: text,
+            prio: prio
+        };
+        todoArray.items.push(newObject);
+        //The id is added up by 1
+        todoArray.nextId++;
+        //Item is getting stringified and put in to localstorage
+        localStorage.setItem("todo", JSON.stringify(todoArray));
+        print();
     });
+    if(localStorage.getItem("todo") === null) {
+        var todoArray = {
+            items: [],
+            nextId: 0
+        };
+        localStorage.setItem("todo", JSON.stringify(todoArray));
+    }
+    print();
+
+    $("#delete").click(function() {
+        localStorage.removeItem("todo");
+    })
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
