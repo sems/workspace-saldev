@@ -14,10 +14,30 @@ $(document).ready(function() {
         //The todo-object are getting showed until there's nothing left
         //They are getting showed of the in 'output' div
         for(var i = 0; i < arrayItems.length; i++) {
-            $("#output").append('<div class="item">' + '<a href="https://www.google.nl/">Remove</a>' +'</div>');
-        }
-    }
+            var newButton = '<input type="button" class="delete-button" value="Delete" data_id="'+ arrayItems[i].id +'" />';
+            $("#output").append('<div class="item">'+ arrayItems[i].text + newButton +'</div>');
 
+        }
+        $(".delete-button").click(function () {
+            // Krijg de unikie ID van deze list item
+            var id = $(this).attr('data_id');
+            console.log(id);
+            var todoArray = JSON.parse(localStorage.getItem("todo"));
+            var arrayItems = todoArray.items;
+            // TODO: Verwijder item uit todoArray met id 'id';
+            for( var i = 0; i < todoArray.items.length; i++) {
+                if(todoArray.items[i].id == id) {
+                    todoArray.items.splice(i, 1);
+                    break;
+                }
+
+            }
+            localStorage.setItem("todo", JSON.stringify(todoArray));
+            // TODO: Update LocalStorage
+            print();
+
+        });
+    }
 
 
     //Add item when Click event
@@ -47,11 +67,13 @@ $(document).ready(function() {
             items: [],
             nextId: 0
         };
+
         localStorage.setItem("todo", JSON.stringify(todoArray));
     }
     print();
-
-    $("#delete").click(function() {
+    //The delete all function
+    $("#deleteAll").click(function() {
         localStorage.removeItem("todo");
+        print();
     })
 });
