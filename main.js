@@ -15,7 +15,7 @@ $(document).ready(function() {
         //They are getting showed of the in 'output' div
         for(var i = 0; i < arrayItems.length; i++) {
             var newButton = '<input type="button" class="delete-button" value="Delete" data_id="'+ arrayItems[i].id +'" />';
-            $("#output").append('<div class="item">'+ arrayItems[i].text + newButton +'</div>');
+            $("#output").append('<div class="item">'+ "<strong>" + arrayItems[i].prio + " </strong> " + arrayItems[i].text + newButton +'</div>');
 
         }
         $(".delete-button").click(function () {
@@ -30,7 +30,6 @@ $(document).ready(function() {
                     todoArray.items.splice(i, 1);
                     break;
                 }
-
             }
             localStorage.setItem("todo", JSON.stringify(todoArray));
             // TODO: Update LocalStorage
