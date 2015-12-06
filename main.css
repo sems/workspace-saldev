@@ -280,3 +280,29 @@ div.inhoud {
     text-align: center;
 }
 /* ---------------- */
+
+
+/* ----konami--- */
+#blink {
+     animation: blinks 0.01s infinite;
+    -webkit-animation: blinks 0.01s infinite;
+
+}
+@-webkit-keyframes blinks {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes blinks {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-o-keyframes blinks {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes blinks {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* ---------------- */
