@@ -260,6 +260,7 @@ div.inhoud {
 
 /* ----To-Do list--- */
 
+
 #output {
     border: 2px solid #353248;
     width: 400px;
@@ -283,9 +284,10 @@ div.inhoud {
 
 
 /* ----Konami--- */
-#blink {
-     animation: blinks 0.01s infinite;
-    -webkit-animation: blinks 0.01s infinite;
+#lyrics {
+     animation: blinks 0.5s infinite;
+    -webkit-animation: blinks 0.5s infinite;
+    animation-iteration-count: 25;
 
 }
 @-webkit-keyframes blinks {
@@ -306,3 +308,47 @@ div.inhoud {
 }
 
 /* ---------------- */
+
+.todo-div {
+    display: inline-block;
+}
+#never {
+    display: inline-block;
+    width: 400px;
+}
+
+ @-webkit-keyframes marquee {
+    0% {
+        -webkit-transform: translate(0, 0);
+    }
+    100% {
+        -webkit-transform: translate(0, -100%);
+    }
+}
+@-moz-keyframes marquee {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(0, -100%);
+    }
+}
+
+ .marquee {
+     display: inline-block;
+    border: solid 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+    height: 200px;
+}
+
+ .marquee span {
+    display: inline-block;
+    padding-top: 50px;
+    text-indent: 0;
+    overflow: hidden;
+    animation: marquee 212s linear ;
+    -webkit-animation: marquee 212s linear infinite;
+
+}
