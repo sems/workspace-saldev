@@ -35,8 +35,8 @@ a {
 /* ---------------- */
 
 
-/* DIV MENU */
-div.menu  {
+/* Menu */
+.submenu  {
     font-size: 1.5em;
     background-color: #AAAAAA;
     width: 100%;
@@ -44,9 +44,8 @@ div.menu  {
     border-bottom: #000000 .5px solid;
     text-align: left;
 }
-/* ---------------- */
 
-/* Menu */
+
 ul {
     list-style: none;
     margin: 0;
