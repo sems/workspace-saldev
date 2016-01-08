@@ -1,0 +1,55 @@
+
+.menu a {
+    text-decoration:none;
+    color: #ffffff;
+}
+
+
+.menu {
+    width: 100% ;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    background-color:rgba(200,0,100,.5);
+    border: 1px solid #000;
+    font-size: 1.2em;
+}
+
+
+.menu ul ul {
+    display: none;
+}
+
+
+.menu li {
+    display: inline-block;
+    padding: 20px;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 1em;
+    background-image: url("img/snow.png");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+}
+
+.inhoud {
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    display: inline-block;
+    height: 100%;
+}
+
+.container{
+    line-height: 120%;
+    opacity: 0.9;
+    padding-top: 45px;
+    margin-left: 20%;
+    margin-right: 20%;
+    background-color: #ffffff;
+    z-index: 10;
+    height: 100%;
+}
