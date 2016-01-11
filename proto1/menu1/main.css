@@ -1,4 +1,47 @@
+/* ------------------- */
+html {
 
+    font-family: sans-serif;
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    animation: fadeIn 0.4s 1;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 1em;
+    background-image: url("img/snow.png");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+
+    margin: 0 auto 0 auto;
+    width: 960px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+article {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+img {
+    background: url(160x90.jpg);
+    width: 100%;
+    transition-duration:0.3s;
+    -webkit-transition-duration:0.3s;
+}
+/* ------------------- */
+
+/* ------------------- */
 .menu a {
     text-decoration:none;
     color: #ffffff;
@@ -25,16 +68,10 @@
     display: inline-block;
     padding: 20px;
 }
+/* ------------------- */
 
-body {
-    font-family: sans-serif;
-    font-size: 1em;
-    background-image: url("img/snow.png");
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-size:cover;
-    background-attachment: fixed;
-}
+
+/* ------------------- */
 
 .inhoud {
     padding-left: 2.5%;
@@ -47,9 +84,160 @@ body {
     line-height: 120%;
     opacity: 0.9;
     padding-top: 45px;
-    margin-left: 20%;
-    margin-right: 20%;
     background-color: #ffffff;
     z-index: 10;
     height: 100%;
 }
+
+/* ------------------- */
+
+
+/* -------------- */
+
+.fadeInLeft {
+    transition-duration:0.3s;
+    -webkit-transition-duration:0.3s;
+}
+
+.fadeInLeft:hover {
+    transform:translate3d(100px,0px,100px );
+    /* Translate along all the axis(x, y, z)*/
+    -webkit-transform:translate3d(100px,0px,100px );
+}
+
+
+
+/* ------------------- */
+
+
+/* -----FadeIn Body--------- */
+
+
+ @-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+ @-moz-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* ------------------- */
+
+
+/* -------------- */
+@-webkit-keyframes fadeInLinks {
+    0%, 60%, 75%, 90%, 100% {
+        -webkit-transition-timing-function: cubic-bezier(0.2, 0.6, 0.3, 1);
+        transition-timing-function: cubic-bezier(0.2, 0.610, 0.3, 1);
+    }
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(-3000px, 0, 0);
+        transform: translate3d(-3000px, 0, 0);
+    }
+    60% {
+        opacity: 1;
+        -webkit-transform: translate3d(25px, 0, 0);
+        transform: translate3d(25px, 0, 0);
+    }
+    75% {
+        -webkit-transform: translate3d(-10px, 0, 0);
+        transform: translate3d(-10px, 0, 0);
+    }
+    90% {
+        -webkit-transform: translate3d(5px, 0, 0);
+        transform: translate3d(5px, 0, 0);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-moz-keyframes fadeInLinks {
+    0%, 60%, 75%, 90%, 100% {
+        transition-timing-function: cubic-bezier(0.2, 0.6, 0.3, 1);
+    }
+    0% {
+        opacity: 0;
+        transform: translate3d(-3000px, 0, 0);
+    }
+    60% {
+        opacity: 1;
+        transform: translate3d(25px, 0, 0);
+    }
+    75% {
+        transform: translate3d(-10px, 0, 0);
+    }
+    90% {
+        transform: translate3d(5px, 0, 0);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* ------------------- */
+
+
+/* -------------- */
+
+ .complete {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #887788);
+    border-radius: 1px;
+    margin: 0 8px 0 8px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.fadeMeestLinks {
+    -webkit-animation: fadeInLinks 0.25s 1;
+    animation: fadeInLinks 0.25s 1;
+}
+.fadeLinks {
+    -webkit-animation: fadeInLinks 0.50s 1;
+    animation: fadeInLinks 0.50s 1;
+}
+.fadeRecht {
+    -webkit-animation: fadeInLinks 0.75s 1;
+    animation: fadeInLinks 0.75s 1;
+}
+.fadeMeestRechts {
+    -webkit-animation: fadeInLinks 1s 1;
+    animation: fadeInLinks 1s 1;
+}
+.thumbnail {
+}
+.artikel {
+    padding: 8px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.samenvatting {
+    font-weight: bold;
+    flex: 1;
+    display: flex;
+}
+.inhoudArtikel {
+    flex: 1;
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
