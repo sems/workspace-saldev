@@ -33,6 +33,27 @@
         }
         echo "</ul>";
 
+        $animals = array("Horse", "Cat", "Doge", "Dog", "Mouse", "Piggy", "Chicken", "Fish");
+
+        foreach($animals as$item) {
+            echo $item."<br/>";
+        }
+
+        echo "<br/>"
+
+        function toonN($lijstNummers, $n){
+            $lijstNummers = array(1,332,24,12,6,96, 6, 23, 323, 65, 23, 85, 12, 43, 43);
+            $n = 6;
+            foreach($lijstNummers as $number) {
+                if (($number % $n) === 0)
+                    echo "Nummer deelbaar door ".$n." zijn: ".$number."<br/>";
+                }
+        }
+
+        toonN(6, 5);
+
+
+
     ?>
 </body>
 </html>
