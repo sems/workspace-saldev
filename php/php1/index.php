@@ -21,8 +21,10 @@
         $gemiddelde = $som / 3;
         echo "Het gemiddelde is: " .$gemiddelde. "<br/>";
 
-        $motto = "Simplicity is the ultimate sophistication."
+        $motto = "Simplicity is the ultimate sophistication. <br/>";
 
+        $kop = $naam."-".$motto."<br/>";
+        echo "<h1>".$kop."</h1>"
     ?>
 </body>
 </html>
