@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>PHP 1</title>
-</head>
-<body>
-    <?php
+<?php
+        $htmlKop = '<!DOCTYPE html>
+                            <html lang="en">
+                            <head>
+                                <meta charset="UTF-8">
+                                <title>PHP 1</title>
+                            </head>
+                            <body>';
+        echo $htmlKop;
         $naam = "Sem";
         echo $naam. "<br/>";
         echo "De lengte van naam: ".strlen($naam). "<br/>";
@@ -39,10 +40,10 @@
             echo $item."<br/>";
         }
 
-        echo "<br/>"
+        echo "<br/>";
 
         function toonN($lijstNummers, $n){
-            $lijstNummers = array(1,332,24,12,6,96, 6, 23, 323, 65, 23, 85, 12, 43, 43);
+            $lijstNummers = array(1,332, 24, 12, 6, 96, 6, 23, 323, 65, 23, 85, 12, 43, 43, 26, 74, 82, 82 , 92);
             $n = 6;
             foreach($lijstNummers as $number) {
                 if (($number % $n) === 0)
@@ -52,8 +53,13 @@
 
         toonN(6, 5);
 
+        echo "<br/> Opdracht 16 <br/>";
+        $lijstNummers = array(1,332, 24, 12, 6, 96, 6, 23, 323, 65, 23, 85, 12, 43, 43, 26, 74, 82, 82 , 92);
+        $aveNummers = array_sum($lijstNummers) / count($lijstNummers);
+        echo $aveNummers;
+
+        $htmlVoet = '</body> </html>';
+        echo $htmlVoet;
 
 
     ?>
-</body>
-</html>
