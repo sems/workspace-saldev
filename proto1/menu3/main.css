@@ -171,6 +171,10 @@ ul, li {
 .button:hover {
     animation: doSomeThings 1s ease-out;
 }
+
+.button1:hover{
+    animation: kill 2s ease-out;
+}
 /* ------------------- */
 
 
@@ -243,10 +247,34 @@ ul, li {
         opacity: 0.3;
         transform: translate(10px, -10px);
     }
-    100% {opacity: 1;
+    100% {
+        opacity: 1;
         transform: translate(0, 0);
     }
 }
+@keyframes kill {
+    0% {
+        transform: rotate(0deg)
+            translate(0)
+            rotate(0deg);
+    }
+    20%{
+        transform: rotate(0deg)
+                   translate(-150px)
+                   rotate(0deg);
+    }
+    80% {
+        transform: rotate(1440deg)
+            translate(-150px)
+            rotate(-360deg);
+    }
+    100% {
+        transform: rotate(0deg)
+            translate(0)
+            rotate(0deg);
+    }
+}
+
 
 /* -----FadeIn Articles--------- */
 
@@ -354,4 +382,3 @@ ul, li {
     -webkit-animation-iteration-count: 2;
     -webkit-animation-timing-function: linear;
 }
-
