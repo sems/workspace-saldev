@@ -1,23 +1,18 @@
 /* ------------------- */
 html {
-
     font-family: sans-serif;
     font-size: 1em;
     margin: 0;
     padding: 0;
     width: 100%;
-    animation: fadeIn 0.4s 1;
 }
 
 body {
-    font-family: sans-serif;
-    font-size: 1em;
     background-image: url("img/snow.png");
     background-position: center top;
     background-repeat: no-repeat;
     background-size:cover;
     background-attachment: fixed;
-
     margin: 0 auto 0 auto;
     width: 960px;
     display: flex;
@@ -41,33 +36,62 @@ img {
 }
 /* ------------------- */
 
-/* ------------------- */
-.menu a {
-    text-decoration:none;
-    color: #ffffff;
+/* -------MENU-------- */
+ul, li {
+    z-index: 100;
 }
-
-
 .menu {
-    width: 100% ;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 10px;
-    background-color:rgba(200,0,100,.5);
-    border: 1px solid #000;
-    font-size: 1.2em;
+    background:#00838F;
+    padding:0;
+    margin:0;
+    list-style-type:none;
+    height:48px;
+
 }
-
-
-.menu ul ul {
-    display: none;
-}
-
 
 .menu li {
-    display: inline-block;
-    padding: 20px;
+    float:left;
+    width: 149px;
 }
+.menu li a {
+    padding:15px 40px;
+    display:block;
+    color:#fff;
+    text-decoration:none;
+
+}
+
+/* Submenu */
+.menu ul {
+    position:absolute;
+    left:-9999px;
+    top:-9999px;
+    list-style-type:none;
+    width: 149px;
+}
+.menu li:hover {
+    position:relative;
+    background:#00BCD4;
+}
+.menu li:hover ul {
+    left:0px;
+    top:48px;
+    background:#00BCD4;
+    padding:0px;
+}
+
+.menu li:hover ul li a {
+    padding:10px;
+    display:block;
+    width:130px;
+    text-indent:15px;
+    background-color:#00838F;
+}
+.menu li:hover ul li a:hover {
+    background:#00BCD4;
+    border-bottom: 2px solid #2962FF;
+}
+
 /* ------------------- */
 
 
@@ -91,132 +115,19 @@ img {
 
 /* ------------------- */
 
-
-/* -------------- */
-
-.fadeInLeft {
-    transition-duration:0.3s;
-    -webkit-transition-duration:0.3s;
-}
-
-.fadeInLeft:hover {
-    transform:translate3d(100px,0px,100px );
-    /* Translate along all the axis(x, y, z)*/
-    -webkit-transform:translate3d(100px,0px,100px );
-}
-
-
-
-/* ------------------- */
-
-
-/* -----FadeIn Body--------- */
-
-
- @-webkit-keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
- @-moz-keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-/* ------------------- */
-
-
-/* -------------- */
-@-webkit-keyframes fadeInLinks {
-    0%, 60%, 75%, 90%, 100% {
-        -webkit-transition-timing-function: cubic-bezier(0.2, 0.6, 0.3, 1);
-        transition-timing-function: cubic-bezier(0.2, 0.610, 0.3, 1);
-    }
-    0% {
-        opacity: 0;
-        -webkit-transform: translate3d(-3000px, 0, 0);
-        transform: translate3d(-3000px, 0, 0);
-    }
-    60% {
-        opacity: 1;
-        -webkit-transform: translate3d(25px, 0, 0);
-        transform: translate3d(25px, 0, 0);
-    }
-    75% {
-        -webkit-transform: translate3d(-10px, 0, 0);
-        transform: translate3d(-10px, 0, 0);
-    }
-    90% {
-        -webkit-transform: translate3d(5px, 0, 0);
-        transform: translate3d(5px, 0, 0);
-    }
-    100% {
-        opacity: 1;
-    }
-}
-@-moz-keyframes fadeInLinks {
-    0%, 60%, 75%, 90%, 100% {
-        transition-timing-function: cubic-bezier(0.2, 0.6, 0.3, 1);
-    }
-    0% {
-        opacity: 0;
-        transform: translate3d(-3000px, 0, 0);
-    }
-    60% {
-        opacity: 1;
-        transform: translate3d(25px, 0, 0);
-    }
-    75% {
-        transform: translate3d(-10px, 0, 0);
-    }
-    90% {
-        transform: translate3d(5px, 0, 0);
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-/* ------------------- */
-
-
 /* -------------- */
 
  .complete {
     border-style: solid;
     border-width: 1px;
-    border-color: #887788);
+    border-color: #887788;
     border-radius: 1px;
     margin: 0 8px 0 8px;
     flex: 1;
     display: flex;
     flex-direction: column;
 }
-.fadeMeestLinks {
-    -webkit-animation: fadeInLinks 0.25s 1;
-    animation: fadeInLinks 0.25s 1;
-}
-.fadeLinks {
-    -webkit-animation: fadeInLinks 0.50s 1;
-    animation: fadeInLinks 0.50s 1;
-}
-.fadeRecht {
-    -webkit-animation: fadeInLinks 0.75s 1;
-    animation: fadeInLinks 0.75s 1;
-}
-.fadeMeestRechts {
-    -webkit-animation: fadeInLinks 1s 1;
-    animation: fadeInLinks 1s 1;
-}
-.thumbnail {
-}
+
 .artikel {
     padding: 8px;
     flex: 1;

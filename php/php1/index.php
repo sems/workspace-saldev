@@ -24,6 +24,39 @@
             '</body> </html>';
         }
 
+        // Opdracht 16
+        function gemiddelde($getallenLijst) {
+            $som = 0;
+            foreach($getallenLijst as $getal) {
+                $som += $getal;
+            }
+
+            return ($som / count($getallenLijst));
+        }
+
+        // Opdracht 17
+        function som($getallenLijst) {
+            $som = 0;
+            foreach($getallenLijst as $getal) {
+                $som += $getal;
+            }
+
+            return $som;
+        }
+
+        function vermenigvuldig($getallenLijst) {
+            $product = $getallenLijst[0];
+            for($i = 1; $i < count($getallenLijst); $i += 1) {
+                $product *= $getallenLijst[$i];
+            }
+
+            return $product;
+        }
+
+        function delen($a, $b) {
+            return ($a / $b);
+        }
+
         htmlKop();
         // K.I.S.S Keep It Simple, Stupit!
         // DRY Don't repeat yourself
@@ -90,6 +123,30 @@
         $aveNummers = array_sum($lijstNummers) / count($lijstNummers);
         echo $aveNummers;
 
+        // Opdracht 17
+        echo "Som(): ".som($arrGetallen)."<br />";
+        echo "Vermenigvuldig(): ".vermenigvuldig($arrGetallen)."<br />";
+        echo "Delen(): ".delen(36, 15)."<br />";
+
+        // Opdracht 18
+        echo '<table>
+                <thead>
+                    <tr><th>Index</th>
+                    <th>Value</th></tr>
+                </thead>
+                <tbody>';
+
+        foreach($arrGetallen as $index => $value) {
+            $class = 'oneven';
+
+            if(($index % 2) === 0) {
+                $class = 'even';
+            }
+
+            echo '<tr class="'.$class.'"><td>'.$index.'</td><td>'.$value.'</td></tr>';
+        }
+
+        echo '</tbody></table>';
         htmlVoet();
 
 
