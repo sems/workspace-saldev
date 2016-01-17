@@ -163,6 +163,14 @@ ul, li {
     transition-delay: 2s;
     animation: 2s goAwayRight ease-in;
 }
+
+.button {
+    transition-delay: 5s;
+}
+
+.button:hover {
+    animation: doSomeThings 1s ease-out;
+}
 /* ------------------- */
 
 
@@ -213,6 +221,31 @@ ul, li {
     0% { -webkit-transform: scale(1); }
     50% { -webkit-transform: scale(0.9); }
     100% { -webkit-transform: scale(1); }
+}
+@keyframes doSomeThings {
+    0%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    20% {
+        opacity: 0.3;
+        transform: translate(10px, 10px);
+    }
+    40% {
+        opacity: 0.6;
+        transform: translate(-10px, 10px);
+    }
+    60% {
+        opacity: 0.6;
+        transform: translate(-10px, -10px);
+    }
+    80% {
+        opacity: 0.3;
+        transform: translate(10px, -10px);
+    }
+    100% {opacity: 1;
+        transform: translate(0, 0);
+    }
 }
 
 /* -----FadeIn Articles--------- */
