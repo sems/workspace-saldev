@@ -11,6 +11,7 @@
                 $logins = array(
                     'Alex' => '123456',
                     'Sem' => 'password1',
+                    'test' => 'test',
                     'Lars' => 'csgo4life');
                 // This is the control for the usernames and passwords
                 $Username = isset($_POST['Username']) ? $_POST['Username'] : '';
