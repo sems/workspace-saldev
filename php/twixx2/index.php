@@ -58,8 +58,8 @@
         ?>
 
         <form action="index.php" method="post">
-            <input type="text" name="student" />
-            <input type="submit" name="verzend" value="verzend naam!" />
+            <input type="text" name="count" />
+            <input type="submit" name="sendCount" value="Send the coun" />
         </form>
     </body>
 </html>

@@ -32,7 +32,8 @@
             <input type="submit" name="send" value="Send!"/>
         </form>
         <?php
-            include "hallo.php"
+            include "hallo.php";
+            echo "<strong>Hello World!</strong>"
         ?>
     </body>
 </html>
