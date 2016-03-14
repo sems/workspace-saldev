@@ -4,7 +4,6 @@ $(document).ready(function() {
         //Getting the todo-string
         var todoArray = JSON.parse(localStorage.getItem("todo"));
         var arrayItems = todoArray.items;
-
         console.log(arrayItems);
         //The sort function
         arrayItems.sort(function(a, b) {
@@ -16,7 +15,6 @@ $(document).ready(function() {
         for(var i = 0; i < arrayItems.length; i++) {
             var newButton = '<input type="button" class="delete-button" value="Delete" data_id="'+ arrayItems[i].id +'" />';
             $("#output").append('<div class="item">'+ "<strong>" + arrayItems[i].prio + " </strong> " + arrayItems[i].text + newButton +'</div>');
-
         }
         $(".delete-button").click(function () {
             // Krijg de unikie ID van deze list item
@@ -34,7 +32,6 @@ $(document).ready(function() {
             localStorage.setItem("todo", JSON.stringify(todoArray));
             // TODO: Update LocalStorage
             print();
-
         });
     }
 
