@@ -96,28 +96,29 @@ $().ready(function() {
         calcscore()
     });
 });
+$(document).ready(function() {
+    $('input[type=radio]').click(function() {
+    		var LocalObject = {
+    			value : $(this).val(),
+    			name : $(this).attr('name')
+    		}
+    		var String = JSON.stringify(LocalObject);
+    		localStorage.setItem("Vraag " + LocalObject.name, String);
+    	});
 
-$('input').click(function() {
-		var LocalObject = {
-			value : $(this).val(),
-			name : $(this).attr('name')
-		}
-		var String = JSON.stringify(LocalObject);
-		localStorage.setItem("Vraag " + LocalObject.name, String);
-	});
-
-	$('input').each(function() {
-		if(localStorage != null) {
-			var Currentvalue = $(this).val();
-			var CurrentName = $(this).attr('name');
-			var localstorage = localStorage.getItem("Vraag " + CurrentName);
-			var ParseString = JSON.parse(localstorage);
-			if(ParseString != undefined) {
-				if(Currentvalue == ParseString.value) {
-					if(CurrentName == ParseString.name) {
-						this.setAttribute('checked', 'checked');
-					}
-				}
-			}
-		}
+    $('input').each(function() {
+    	if(localStorage != null) {
+    		var Currentvalue = $(this).val();
+    		var CurrentName = $(this).attr('name');
+    		var localstorage = localStorage.getItem("Vraag " + CurrentName);
+    		var ParseString = JSON.parse(localstorage);
+    		if(ParseString != undefined) {
+    			if(Currentvalue == ParseString.value) {
+    				if(CurrentName == ParseString.name) {
+    					this.setAttribute('checked', 'checked');
+    				}
+    			}
+    		}
+    	}
+    });
 });
