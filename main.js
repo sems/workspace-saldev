@@ -1,3 +1,7 @@
+
+function openCanvas() {
+    var myWindow = window.open("http://sspanhaak.saldev.nl/interactief/", "", "width=1280,height=720");
+}
 $(document).ready(function() {
     //The todo items that are already saved in localstorage are getting pulled out of it and getting displayed.
     var print = function() {
