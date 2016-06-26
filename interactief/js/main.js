@@ -9,7 +9,7 @@ var aDown = false;
 var dDown = false;
 var wDown = false;
 var maxFps = 60;
-var mapHeight =  [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 24, 2, 1, 1, 1, 1, 1, 2, 2, 3, 3, 4, 4, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+var mapHeight =  [20, 20, 20, 20, 20, 20, 20, 20, 20, 12, 10, 24, 2, 1, 1, 1, 1, 1, 2, 2, 3, 3, 4, 4, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
 var renderDistance = 15;
 var mapHeightPlayerPos = 420;
 var otherPlayerarray;
@@ -27,8 +27,26 @@ window.requestAnimFrame = (function(){
         };
     })();
 
+window.onload = function() { 
+    var themeSound = document.getElementById("themeSound");
+
+    themeSound.volume=0.5;
+    themeSound.play();
+}
+
+jQuery(function($) {
+    $("#themeSound").prop('volume', 0.2);
+
+    window.setVolume = function(themeSound,vol) {
+        sounds[themeSound].volume = 0.33;
+    }
+});
+
 $("document").ready(function() {
     // get canvas
+
+    var jumpSound = document.getElementById("jump");
+
     var canvas = document.getElementById('portfolio');
     var context = canvas.getContext('2d');
     // Check if key down
@@ -45,7 +63,9 @@ $("document").ready(function() {
             case 87: //up (w)
               if(player.y > (mapHeightPlayerPos - 5)) {
                 wDown = true;
+                
               }
+                jumpSound.play();
               break;
         }
     });
@@ -84,14 +104,18 @@ $("document").ready(function() {
         p1 = Math.floor((player.x + 5) / 40) - 5;
         p2 = Math.ceil(player.x / 40) - 5;
         mapHeightPlayerPos = 460 -  (Math.max(mapHeight[p1], mapHeight[p2]) * 40);
+        // Let the player jump.
         if(wDown) {
             if(!jumping) {
                 if(wDown) {
+
                     jumping = true;
                     jumpStart = 45;
+                    jumpSound.play();
                 }
             } else {
                 if(jumpStart <= 0) {
+                    
                     if(player.y < mapHeightPlayerPos) {
                         player.y += 5;
                     }
@@ -103,8 +127,10 @@ $("document").ready(function() {
         } else {
             if(player.y < mapHeightPlayerPos) {
                 player.y += 5;
+
             } else {
                 jumping = false;
+
             }
         }
     }, moveSpeed);

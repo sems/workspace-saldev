@@ -3,7 +3,7 @@ var background = {
 	y: 0,
 	width: 1000,
 	height: 500,
-	color: "#99d9ea",
+	color: "#44c9dd",
 	draw: function() {
 		var ctx = document.getElementById("portfolio").getContext('2d');
 		ctx.fillStyle = this.color;
@@ -64,7 +64,7 @@ var player = {
             
             ctx.fillStyle = "#000";
             ctx.font="20px Arial";
-            ctx.fillText(this.name, 400, this.y - 20);
+            ctx.fillText(this.name, 400, this.y - 50);
 
             var img = document.getElementById("source");
             ctx.drawImage(img, 400 , this.y - 45);
