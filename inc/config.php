@@ -4,13 +4,15 @@
         pwd: NtxeTVL6RCGtWN82
     */
     //database credentials
-    define('DBHOST','localhost');
-    define('DBNAME','studentdb_sspanhaak');
-    define('DBUSER','sspanhaak');
-    define('DBPASS','NtxeTVL6RCGtWN82');
+    //define('DBHOST','localhost');
+    //define('DBNAME','studentdb_sspanhaak');
+    //define('DBUSER','sspanhaak');
+    //define('DBPASS','NtxeTVL6RCGtWN82');
 
-    $db = new PDO("mysql:host=".DBHOST.";dbname=".DBNAME, DBUSER, DBPASS);
+    $db = new PDO("mysql:host=$servername;dbname=studentdb_sspanhaak", $username, $password);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
 ?>
+
+                
