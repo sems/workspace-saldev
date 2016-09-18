@@ -1,0 +1,159 @@
+@import "reset";
+@import "mixins";
+@import "nav";
+@import "classlist";
+@import "post";
+@import "forms";
+
+body, html {
+    @include marpad;
+    max-width: 100%;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background-color: #edeff0;
+    font-family: 'Lato';
+    font-size: 1em;
+    position: relative;
+    padding-bottom: 48px;
+    padding-top: 80px;
+    min-height: 100%;
+}
+.container {
+    line-height: 140%;
+    opacity: 0.9;
+    margin-top: 0px;
+    margin: 0 20%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    padding-top: 25px;
+    padding-bottom: 75px;
+    background-color: #ffffff;
+    min-height: 100%;
+    height: auto;
+    @media screen and (max-width: 700px) {
+        margin: 0 0 !important;
+        padding: 75px 5px !important;
+        width: auto;
+        height: auto;
+    }
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    font-family: "Lato";
+    text-transform: uppercase;
+    background-color: $navbg;
+    padding: 1em;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    @media screen and (max-width: 700px) {
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .footer-link {
+        @media screen and (max-width: 700px) {
+            display: inline-block;
+            width: 45%;
+        }
+        display: inline-block;
+    }
+    a {
+        color: $option;
+        cursor: pointer;
+        padding: 0 1em;
+        text-decoration: none;
+        &:hover {
+          color: lighten($option, 50%);
+          cursor: pointer;
+          transition: all .25s;
+        }
+        @media screen and (max-width: 700px) {
+            width: 100%;
+            flex-wrap: nowrap;
+            flex-direction: row;
+            flex: 1
+        }
+    }
+}
+
+.post-head {
+    text-align: center;
+    font-size: 22px;
+    margin: 30px 3%;
+}
+.post {
+    background-color: #edeff0;
+    border-bottom: 2px solid #dddddd;
+    border-radius: 4px;
+    padding: 20px 20px;
+    margin: 15px 1.5%;
+    min-height: 200px;
+    a {
+        color: #000;
+        cursor: pointer;
+        padding: 0 1em;
+
+        &:hover {
+            color: lighten(#000, 50%);
+            cursor: pointer;
+            transition: all .25s;
+        }
+    }
+    .post-title{
+        width: auto;
+        padding: 20px 0;
+        font-weight: bold;
+        font-size: 1.33em;
+    }
+    .post-img {
+            display: inline-block;
+            padding: 1em 1em 1em 0;
+            max-width:300px;
+            max-height:150px;
+            width: auto;
+            height: auto;
+            @media screen and (max-width: 700px) {
+                max-width:100%;
+                max-height:100%;
+                width: auto;
+                height: auto;
+            }
+    }
+    .post-date {
+        width: auto;
+        border-bottom: 1px solid #e2e5e8;
+    }
+    .post-read {
+        border-top: 1px solid #e2e5e8;
+    }
+}
+.myself {
+    display: inline-block !important;
+    max-width:300px;
+    max-height:150px;
+    width: auto;
+    height: auto;
+    @media screen and (max-width: 700px) {
+        max-width:100%;
+        max-height:100%;
+        width: auto;
+        height: auto;
+    }
+}
+
+.vid-school {
+    max-width: 600;
+    max-height: 400;
+    height: auto;
+    width: auto;
+}

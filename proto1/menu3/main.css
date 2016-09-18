@@ -1,3 +1,0 @@
-$('#read-more').each(function(){
-		    $(this).append('<a href="#">Click to Read More</a>');
-		});

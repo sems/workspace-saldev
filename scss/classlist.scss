@@ -1,0 +1,27 @@
+#klassenlijst {
+    padding: 0.1px;
+    div {
+        a {
+            text-decoration: none;
+            color: darken($brand, 50%);
+            transition: all .25s;
+            &:hover {
+                color: darken($option, 20%);
+            }
+        }
+    }
+}
+
+#klassenlijst > div{
+    display: inline-block;
+    margin: .75%;
+    padding: .25%;
+    background-color: #edeff0;
+    border: darken(#edeff0, 50%) 3px solid;
+    border-radius: 5px;
+    @include transition(all, 0.3s, ease);
+}
+
+#klassenlijst > div:hover {
+    @include transform_scale(1.1);
+}
