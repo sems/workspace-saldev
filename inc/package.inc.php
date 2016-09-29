@@ -1,3 +1,0 @@
-<?php
-    $template 	= "template.php";
-?>

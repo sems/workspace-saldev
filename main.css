@@ -1,0 +1,357 @@
+/* Dit is de basis-css van de site die op elke pagina wordt toegepast */
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-attachment: fixed;
+    background-color: #000000;
+    background-image: url("img/background.jpg");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size:cover;
+    font-family: 'Product Sans', Arial, sans-serif;
+    font-size: 1em;
+}
+
+
+.logo {
+    float: left;
+    height: 50px;
+    width: 100px;
+    margin-top: 5px;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* ---------------- */
+
+
+/* Menu */
+.submenu  {
+    font-size: 1.5em;
+    background-color: #AAAAAA;
+    width: 100%;
+    border-top: #000000 .5px solid;
+    border-bottom: #000000 .5px solid;
+    text-align: left;
+}
+
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+    padding: 15px;
+}
+
+.menu a {
+    text-decoration:none;
+    color: #ffffff;
+}
+
+.menu a:hover {
+    color: #000000;
+    -webkit-animation: fadein 0.1s;
+    -moz-animation: fadein 0.1s;
+    -ms-animation: fadein 0.1s;
+    -o-animation: fadein 0.1s;
+    animation: fadein 0.1s;
+}
+
+.menu li:hover {
+    background: #999999;
+    color: #000;
+    -webkit-transition: all ease 0.1s;
+    -moz-transition: all ease 0.1s;
+    -o-transition: all ease 0.1s;
+    -ms-transition: all ease 0.1s ;
+    transition: all ease 0.3s ;
+}
+.menu ul ul {
+    display: none;
+}
+
+.menu ul li ul li {
+    display: block;
+    border: 1px #000000 solid;
+    width: 100px;
+}
+
+.menu ul li:hover > ul {
+    display: block;
+    position: absolute;
+    background-color: #AAAAAA;
+    z-index: 5;
+    margin: 15px;
+
+}
+
+.menu ul li:hover ul {
+    visibility: visible;
+    margin-left: -15px;
+}
+
+.drop li:before {
+    content: " | ";
+}
+
+.drop li:first-child:before {
+    content: none;
+}
+/* ---------------- */
+
+
+/* Inhoud */
+div.inhoud {
+    line-height: 140%;
+    opacity: 0.9;
+    padding-top: 45px;
+    margin-left: 20%;
+    margin-right: 20%;
+    background-color: #ffffff;
+    z-index: 10;
+    height: 100%;
+}
+
+
+.tekst {
+    padding-left: 2.5%;
+    display: inline-block;
+    padding-right: 2.5%;
+    height: 100%;
+}
+
+/* ---------------- */
+
+
+/* Footer */
+
+.footer {
+    padding: 0.75em 0.75em;
+    border-top: 1px solid;
+    text-align: center;
+    z-index: 5;
+    height: 100%;
+}
+/* ---------------- */
+
+
+/* Non-Global */
+
+
+.games {
+    width: 40%;
+}
+
+.games {
+    margin-left: 15%;
+    -webkit-transition: all 0.6s ease;
+    -moz-transition: all 0.6s ease;
+    -o-transition: all 0.6s ease;
+    -ms-transition: all 0.6s ease;
+    transition: all 0.6s ease;
+}
+
+.games:hover {
+    -webkit-transform:scale(1.15);
+    -moz-transform:scale(1.15);
+    -ms-transform:scale(1.15);
+    -o-transform:scale(1.15);
+     transform:scale(1.15);
+}
+.maps {
+    display: inline-block;
+}
+/*Twitter-feed */
+.twitter-feed {
+   display: inline-block;
+}
+
+/*Social Butons */
+.social {
+    height: 100px;
+    width: 100px;
+    filter: invert(1);
+}
+.social:hover {
+    -webkit-transition: all 1s ease-out 0s;
+    -moz-transition: all 1s ease-out 0s;
+    -o-transition: all 1s ease-out 0s;
+    transition: all 1s ease-out 0s;
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(360deg);
+    -ms-transform: rotateY(360deg);
+    -o-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+    filter: invert(1);
+}
+/* ---------------- */
+
+
+/* Klassenlijst */
+
+#klassenlijst {
+    padding: 0.1px;
+}
+
+#klassenlijst > div{
+    display: inline-block;
+    margin: .75%;
+    padding: .25%;
+    background-color: #dadada;
+    border: #444 3px solid;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+
+}
+
+#klassenlijst > div:hover {
+    -webkit-transform:scale(1.1);
+    -moz-transform:scale(1.1);
+    -ms-transform:scale(1.1);
+    -o-transform:scale(1.1);
+    transform:scale(1.1);
+}
+
+/* ---------------- */
+
+
+
+/* Webkits */
+@keyframes fadein {
+    from { opacity: 0.2; }
+    to   { opacity: 1; }
+}
+/* ---------------- */
+
+
+.nav li ul {
+    position:absolute;
+    left:0;
+    top:36px;
+    z-index:1;
+}
+.nav li ul li {
+    overflow:hidden;
+    max-height:0;
+}
+.nav ul > li:hover ul li {
+    max-height:150px;
+}
+
+.todo-item {
+    background-color: #e4e4e4;
+    border-style: solid;
+}
+
+/* ---------------- */
+
+
+/* ----To-Do list--- */
+
+
+#output {
+    border: 2px solid #353248;
+    width: 400px;
+    min-height: 200px;
+}
+
+
+#toevoegenBttn {
+    width: 50%;
+    border: 2px solid #454545;
+    background-color: #858585;
+    text-align: center;
+}
+#deleteAll {
+    width: 50%;
+    border: 2px solid #454545;
+    background-color: #858585;
+    text-align: center;
+}
+/* ---------------- */
+
+
+/* ----Konami--- */
+#lyrics {
+     animation: blinks 0.5s infinite;
+    -webkit-animation: blinks 0.5s infinite;
+    animation-iteration-count: 25;
+
+}
+@-webkit-keyframes blinks {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes blinks {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-o-keyframes blinks {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes blinks {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* ---------------- */
+
+.todo-div {
+    display: inline-block;
+}
+#never {
+    display: inline-block;
+    width: 400px;
+}
+
+ @-webkit-keyframes marquee {
+    0% {
+        -webkit-transform: translate(0, 0);
+    }
+    100% {
+        -webkit-transform: translate(0, -100%);
+    }
+}
+@-moz-keyframes marquee {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(0, -100%);
+    }
+}
+
+ .marquee {
+     display: inline-block;
+    border: solid 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+    height: 200px;
+}
+
+ .marquee span {
+    display: inline-block;
+    padding-top: 50px;
+    text-indent: 0;
+    overflow: hidden;
+    animation: marquee 212s linear ;
+    -webkit-animation: marquee 212s linear infinite;
+
+}

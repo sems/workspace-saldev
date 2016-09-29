@@ -1,0 +1,154 @@
+/* ------------------- */
+html {
+    font-family: sans-serif;
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+body {
+    background-image: url("img/snow.png");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+    margin: 0 auto 0 auto;
+    width: 960px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+article {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+img {
+    background: url(160x90.jpg);
+    width: 100%;
+    transition-duration:0.3s;
+    -webkit-transition-duration:0.3s;
+}
+/* ------------------- */
+
+/* -------MENU-------- */
+ul, li {
+    z-index: 100;
+}
+.menu {
+    background:#00838F;
+    padding:0;
+    margin:0;
+    list-style-type:none;
+    height:48px;
+
+}
+
+.menu li {
+    float:left;
+    width: 149px;
+}
+.menu li a {
+    padding:15px 40px;
+    display:block;
+    color:#fff;
+    text-decoration:none;
+
+}
+
+/* Submenu */
+.menu ul {
+    position:absolute;
+    left:-9999px;
+    top:-9999px;
+    list-style-type:none;
+    width: 149px;
+}
+.menu li:hover {
+    position:relative;
+    background:#00BCD4;
+}
+.menu li:hover ul {
+    left:0px;
+    top:48px;
+    background:#00BCD4;
+    padding:0px;
+}
+
+.menu li:hover ul li a {
+    padding:10px;
+    display:block;
+    width:130px;
+    text-indent:15px;
+    background-color:#00838F;
+}
+.menu li:hover ul li a:hover {
+    background:#00BCD4;
+    border-bottom: 2px solid #2962FF;
+}
+
+/* ------------------- */
+
+
+/* ------------------- */
+
+.inhoud {
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    display: inline-block;
+    height: 100%;
+}
+
+.container{
+    line-height: 120%;
+    opacity: 0.9;
+    padding-top: 45px;
+    background-color: #ffffff;
+    z-index: 10;
+    height: 100%;
+}
+
+/* ------------------- */
+
+/* -------------- */
+
+ .complete {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #887788;
+    border-radius: 1px;
+    margin: 0 8px 0 8px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.artikel {
+    padding: 8px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.samenvatting {
+    font-weight: bold;
+    flex: 1;
+    display: flex;
+}
+.inhoudArtikel {
+    flex: 1;
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
