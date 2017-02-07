@@ -17,5 +17,4 @@
     }
 
     include_once $template;
-
 ?>

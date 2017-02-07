@@ -6,7 +6,7 @@
         // Controle of benodigde velden wel ingevuld zijn
         if(isset($_POST['user'], $_POST['pass'])) {
             $sWachtwoord = trim($_POST['pass']);
-            $sUserName = $_POST['user'];
+            $sUserName   = $_POST['user'];
 
             $stmt = $db->prepare('SELECT id_user, name_user, user_pwd, user_rank, user_name FROM users WHERE name_user = :name');
             $stmt->bindParam(':name', $sUserName, PDO::PARAM_STR);
@@ -28,11 +28,11 @@
                 header('Refresh: 0.1; url=/');
             } else {
                 header('Refresh: 3; url=/login');
-                echo 'Deze combinatie van gebruikersnaam en wachtwoord is niet juist!';
+                $loggInFormError = 'Deze combinatie van gebruikersnaam en wachtwoord is niet juist!';
             }
         } else{
             header('Refresh: 3; url=/login');
-            echo 'Een vereist veld bestaat niet!';
+            $loggInFormError = 'Een vereist veld bestaat niet!';
         }
     } else {
         // Terug naar het formulier
