@@ -1,0 +1,19 @@
+User-agent: *
+Disallow: /addnav/
+Disallow: /additem/
+Disallow: /controlpanel/
+Disallow: /inc/
+Disallow: /manage-pages/
+Disallow: /manage-portfolio/
+Disallow: /js/
+Disallow: /views/
+
+Disallow: /addnav
+Disallow: /additem
+Disallow: /controlpanel
+Disallow: /inc
+Disallow: /manage-pages
+Disallow: /manage-portfolio
+Disallow: /js
+
+Sitemap: http://semspanhaak.nl/sitemap.xml
