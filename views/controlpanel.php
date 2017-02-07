@@ -1,4 +1,4 @@
-<div class="cp-container">
+<div class="container">
     <div class="post-head">ControlPanel</div>
     <br />
     <?php
