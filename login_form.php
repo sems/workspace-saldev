@@ -27,11 +27,9 @@
 
                 header('Refresh: 0.1; url=/');
             } else {
-                header('Refresh: 3; url=/login');
                 $loginError = 'Deze combinatie van gebruikersnaam en wachtwoord is niet juist!';
             }
         } else{
-            header('Refresh: 3; url=/login');
             $loginError = 'Een vereist veld bestaat niet!';
         }
     } else {
