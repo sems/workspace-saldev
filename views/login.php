@@ -4,7 +4,10 @@
     </div>
     <div class="login">
         <form method="post" action="/login_form.php">
-
+            <?php
+            if(isSet($loginError)){
+                echo $loginError;
+            }?>
             <div class="group">
                 <input type="text" name="user" id="users" required>
                 <span class="highlight"></span>
