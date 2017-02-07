@@ -1,0 +1,51 @@
+.arduinoCode {
+    .download-file {
+        padding: 0.5em 0.25em;
+        color: #f0f0f0;
+        background-color: #282c34;
+        border-top: 2px solid #989898;
+        a {
+            background: darken($option, 20%);
+            color: #ddddde;
+            cursor: pointer;
+            padding: 0 0.25em;
+            text-decoration: none;
+            border-radius: 2px;
+            &:hover {
+                color: lighten($option, 75%);
+                cursor: pointer;
+                transition: all .25s;
+            }
+        }
+    }
+    .loveTable{
+        tr{
+            text-align: center;
+            th{
+                width: 150px;
+                border: 2px #8f8f8f solid;
+                background-color: #c7c7c7;
+            }
+            td {
+                width: 150px;
+                border: 1px #8f8f8f solid;
+            }
+        }
+    }
+    pre {
+        font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier;
+        font-size: 12pt;
+        @media screen and (max-width: 700px) {
+            font-size: 8pt;
+        }
+    }
+    h2 {
+        margin:25px 0px;
+        font-size: 22px;
+        small {
+            font-weight:normal;
+            color:#888;
+            display:block;
+        }
+    }
+}
