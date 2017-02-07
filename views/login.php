@@ -3,7 +3,7 @@
         <h2>Login SCMS<small>Enter the credentials</small></h2>
     </div>
     <div class="login">
-        <form method="post" action="/login_form.php">
+        <form method="post" action="/login.php">
             <?php
             if(isSet($loginError)){
                 echo $loginError;
