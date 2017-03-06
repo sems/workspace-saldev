@@ -11,9 +11,6 @@ if( isset($_POST['nav_submit'] ) ) {
                 // Begin writing to core-file
                 $ourFileName = "$preNavItem.php";
 
-                // NOTE: STILL NEED to put this in a variable
-                echo $ourFileName."is uploaded with succes <br />";
-
                 /*
                 NOTE: THE 'w' Open for writing only; place the file pointer
                 at the beginning of the file and truncate the file to zero length.
@@ -47,7 +44,7 @@ if( isset($_POST['nav_submit'] ) ) {
                 fclose($fileHandleCont);
 
 
-                if ($_POST['add_Navbar'] == 'value1') {
+                if ($_POST['addNavbar'] == '1') {
                     $navBarPlacement = 1;
 
                     $query = "INSERT INTO  `navitems`(`title`, `item_location`, `inNavBar`) VALUES (:navTitle, :itemLocation, :inNav)";
@@ -57,7 +54,7 @@ if( isset($_POST['nav_submit'] ) ) {
                     $dbinsert->bindParam(':inNav', $navBarPlacement, PDO::PARAM_STR);
 
                     $dbinsert-> execute();
-                    $done = "Het nav-item is geplaatst met succes in de db!";
+                    $done = "De pagina is goed aangemaakt met ook in de nav!";
 
                 } else {
                     $query = "INSERT INTO  `navitems`(`title`, `item_location`) VALUES (:navTitle, :navItemLocation)";
@@ -66,7 +63,7 @@ if( isset($_POST['nav_submit'] ) ) {
                     $dbinsert->bindParam(':navItemLocation', $ourFileName, PDO::PARAM_STR);
 
                     $dbinsert-> execute();
-                    $done = "Het nav-item is geplaatst met succes in de db!";
+                    $done = "De pagina is met succes aangemaakt!";
                 }
 
             } catch(PDOException $e) {

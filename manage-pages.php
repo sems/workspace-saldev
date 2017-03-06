@@ -10,8 +10,11 @@
             exit();
         } else {
             try {
-                $queryPages = $db->prepare(" SELECT * FROM navitems ");
+                $queryPages = $db->prepare(" SELECT * FROM navitems WHERE deleted ='0' ");
+                // $notDel = 0;
+                // $queryPages->bindParam(':isnotDel', $notDel, PDO::PARAM_STR);
                 $queryPages-> execute();
+
 
                 if(isset($_POST['delete_row'])) {
                     $id = $_POST['id_to_be_deleted'];
@@ -29,14 +32,14 @@
                             unlink($file);
                             unlink($viewOfFile);
                             echo $file;
-
                         }
 
-                        $sql = "DELETE FROM `navitems` WHERE `id` = :id_to_delete";
+                        $sql = "UPDATE navitems SET deleted = :del WHERE `id` = :id_to_delete";
                         $dbRowDel = $db->prepare($sql);
+                        $delted = 1;
+                        $dbRowDel->bindParam(':del', $delted, PDO::PARAM_STR);
                         $dbRowDel->bindParam(':id_to_delete', $id, PDO::PARAM_STR);
                         $dbRowDel-> execute();
-                        print_r($sql);
 
                         header('Location: /manage-pages');
                     } catch(PDOException $e) {

@@ -27,12 +27,12 @@
 
                 header('Location: /controlpanel');
             } else {
-                header('Refresh: 0.5; url=/login');
-                echo 'Deze combinatie van gebruikersnaam en wachtwoord is niet juist!';
+                header('Location: /login');
+                $loginError = 'Deze combinatie van gebruikersnaam en wachtwoord is niet juist!';
             }
         } else{
-            header('Refresh: 0.5; url=/login');
-            echo  'Een vereist veld bestaat niet!';
+            header('Location: /login');
+            $loginError =  'Een vereist veld bestaat niet!';
         }
     } else {
         // Terug naar het formulier

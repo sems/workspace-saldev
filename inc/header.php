@@ -16,8 +16,6 @@
         $currentpage = $_SERVER['REQUEST_URI'];
         if($base == $currentpage) {
                 echo '<link rel="stylesheet" type="text/css" href="/css/landingpage.min.css" />';
-        } if($admin == $currentpage) {
-            echo '<link rel="stylesheet" type="text/css" href="/css/forms.css" />';
         }
     ?>
 

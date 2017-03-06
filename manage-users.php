@@ -10,24 +10,21 @@ require("inc/config.php");
         exit();
     } else {
         try {
-            $queryPages = $db->prepare(" SELECT * FROM users ");
+            $queryPages = $db->prepare(" SELECT * FROM users WHERE deleted ='0'");
             $queryPages-> execute();
 
             // Als de delete row is pressed
             if(isset($_POST['delete_row'])) {
                 $id = $_POST['id_to_be_deleted'];
-                echo $id;
                 try {
 
-                    $sqlDelSpecPage = "SELECT * FROM `users` WHERE `id` = :id_toDelete";
-                    $queryDelSpecPage = $db->prepare($sqlDelSpecPage);
-                    $queryDelSpecPage->bindParam(':id_toDelete', $id, PDO::PARAM_STR);
-                    $queryDelSpecPage-> execute();
-
-                    $sql = "DELETE FROM `users` WHERE `id` = :id_to_delete";
+                    $sql = "UPDATE users SET deleted = :del WHERE `id_user` = :id_to_delete";
                     $dbRowDel = $db->prepare($sql);
+                    $delted = 1;
+                    $dbRowDel->bindParam(':del', $delted, PDO::PARAM_STR);
                     $dbRowDel->bindParam(':id_to_delete', $id, PDO::PARAM_STR);
                     $dbRowDel-> execute();
+
 
                     header('Location: /manage-users');
                 } catch(PDOException $e) {

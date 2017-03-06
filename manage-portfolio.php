@@ -9,7 +9,7 @@
         exit();
     } else {
         try {
-            $queryPages = $db->prepare(" SELECT * FROM portfolio ORDER BY `portfolio`.`id` DESC");
+            $queryPages = $db->prepare(" SELECT * FROM portfolio WHERE deleted ='0' ORDER BY `portfolio`.`id` DESC");
             $queryPages-> execute();
 
             if(isset($_POST['delete_row'])) {
@@ -28,12 +28,13 @@
                         echo $file;
 
                     }
-
-                    $sql = "DELETE FROM `portfolio` WHERE `id` = :id_to_delete";
+                    
+                    $sql = "UPDATE portfolio SET deleted = :del WHERE `id` = :id_to_delete";
                     $dbRowDel = $db->prepare($sql);
+                    $delted = 1;
+                    $dbRowDel->bindParam(':del', $delted, PDO::PARAM_STR);
                     $dbRowDel->bindParam(':id_to_delete', $id, PDO::PARAM_STR);
                     $dbRowDel-> execute();
-                    print_r($sql);
 
                     header('Location: /manage-portfolio');
                 } catch(PDOException $e) {

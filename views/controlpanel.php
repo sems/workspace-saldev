@@ -19,17 +19,17 @@
 
                     } else {
                         echo '
-                        <a href="/manage-portfolio">
+                        <a class="tab-anch" href="/manage-portfolio">
                             <div class="tab-head-step">
                                 <p class="tab-head-step-text">Manage Portfolio</p>
                             </div>
                         </a>
-                        <a href="/manage-pages">
+                        <a class="tab-anch" href="/manage-pages">
                             <div class="tab-head-step">
                                 <p class="tab-head-step-text">Manages Pages</p>
                             </div>
                         </a>
-                        <a href="/manage-users">
+                        <a class="tab-anch" href="/manage-users">
                             <div class="tab-head-step">
                                 <p class="tab-head-step-text">Manages Users</p>
                             </div>
@@ -119,10 +119,9 @@
                         }?>
                         <form method="post" action="/controlpanel.php" enctype="multipart/form-data" novalidate="">
                             <div class="group">
-                                <input type="text" name="title" class="title" required>
-                                <span class="highlight"></span>
-                                <span class="bar"></span>
                                 <label for="user">Onderwerp</label>
+                                <input type="text" name="title" class="title" required>
+
                             </div>
 
                             <p>Image </p>
@@ -134,8 +133,6 @@
                     </div>
 
                 </div> <?php //end of slide ?>
-
-
 
                 <div class="cpData-slide" cp-data-page="3">
 
@@ -149,13 +146,13 @@
 
                         <form method="post" action="/controlpanel.php" enctype="multipart/form-data" novalidate="">
                             <div class="group">
-                                <input type="text" name="navItem_title" class="navItem_Title" required>
-                                <span class="highlight"></span>
-                                <span class="bar"></span>
                                 <label for="user">Title</label>
+                                <input type="text" name="navItem_title" class="navItem_Title" required>
                             </div>
-                            Wilt u deze pagina toevoegen aan het menu <input type="checkbox" name="add_Navbar" value="value1"> <br/> <br/>
-                            <textarea placeholder="Vul hier de content in" class="text_field" name='page_content' required></textarea><br />
+                            Add to menu <input type="checkbox" name="addNavbar" value="value1"> <br/> <br/>
+                            <textarea placeholder="Vul hier de content in" class="text_field" name='page_content' required><div class="container">
+
+                            </div></textarea><br />
                             <input type='submit' name="nav_submit" value='Submit' />
 
                         </form>
