@@ -1,20 +1,5 @@
 <div class="cp-container">
-    <div class="post-head">ControlPanel</div>
-    <br />
-    <?php
-    if(!isset($_SESSION['logged_in']) || ($_SESSION['logged_in'] == false) || ($_SESSION['gebruiker_rank'] == NULL) || ($_SESSION['gebruiker_rank'] == 0)) {
 
-    } else {
-        echo '
-
-        <a href="/manage-portfolio">
-        Click here to manage-portfolio</a><br/><br/>
-
-        <a href="/manage-pages">
-        Click here to manage-pages</a><br/><br/>
-        ';
-    }
-     ?>
 
     <div class="cp-tab-container">
 	    <div class="cp-tab">
@@ -23,18 +8,35 @@
                     <div class="tab-head-step cp-data-active" cp-data-page="1">
                         <p class="tab-head-step-text">Profiel</p>
                     </div>
-                    <div class="tab-head-step" cp-data-page="2">
-                        <p class="tab-head-step-text">Manages Pages</p>
+                    <div class="tab-head-step" cp-data-page="5">
+                        <p class="tab-head-step-text">Add Portfolio</p>
                     </div>
                     <div class="tab-head-step" cp-data-page="3">
                         <p class="tab-head-step-text">Add new page</p>
                     </div>
-                    <div class="tab-head-step" cp-data-page="4">
-                        <p class="tab-head-step-text">Manage Portfolio</p>
-                    </div>
-                    <div class="tab-head-step" cp-data-page="5">
-                        <p class="tab-head-step-text">Add Portfolio</p>
-                    </div>
+                    <?php
+                    if(!isset($_SESSION['logged_in']) || ($_SESSION['logged_in'] == false) || ($_SESSION['gebruiker_rank'] == NULL) || ($_SESSION['gebruiker_rank'] == 0)) {
+
+                    } else {
+                        echo '
+                        <a href="/manage-portfolio">
+                            <div class="tab-head-step">
+                                <p class="tab-head-step-text">Manage Portfolio</p>
+                            </div>
+                        </a>
+                        <a href="/manage-pages">
+                            <div class="tab-head-step">
+                                <p class="tab-head-step-text">Manages Pages</p>
+                            </div>
+                        </a>
+                        <a href="/manage-users">
+                            <div class="tab-head-step">
+                                <p class="tab-head-step-text">Manages Users</p>
+                            </div>
+                        </a>
+                        ';
+                    }
+                    ?>
                 </div>
             </div>
             <div class="cp-tab-content-con">
@@ -46,7 +48,7 @@
                         echo $loggedInMess;
                     }?>
                     <div class="email-change-container">
-                        <h1>Change Email</h1>
+                        <h3>Change Email</h3>
                         <?php
                             if( isSet($mailWarn) ){
                                 echo $mailWarn."<br />";
@@ -77,7 +79,7 @@
                     <br>
 
                     <div class="password-change-container">
-                        <h1>Change Password</h1>
+                        <h3>Change Password</h3>
                         <?php
                             if( isSet($passWarn) ){
                                 echo $passWarn."<br />";
@@ -105,9 +107,35 @@
 
                 </div> <?php //end of slide ?>
 
-                <div class="cpData-slide" cp-data-page="2">
-                    22eee Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <div class="cpData-slide" cp-data-page="5">
+
+                    <div class="blog_create">
+                        <?php
+                        if(isSet($done)){
+                            echo $done;
+                        }?><br/><?php
+                        if(isSet($doneImg)){
+                            echo $doneImg;
+                        }?>
+                        <form method="post" action="/controlpanel.php" enctype="multipart/form-data" novalidate="">
+                            <div class="group">
+                                <input type="text" name="title" class="title" required>
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label for="user">Onderwerp</label>
+                            </div>
+
+                            <p>Image </p>
+                            <input type="file" name="imagefile" class="image"><br /><br />
+                            <textarea placeholder="Vul hier de content in" class="text_field" name='portfolio_content' required></textarea><br />
+                            <input type='submit' name="submitAddItem" value='Submit' />
+                        </form>
+
+                    </div>
+
                 </div> <?php //end of slide ?>
+
+
 
                 <div class="cpData-slide" cp-data-page="3">
 
@@ -119,7 +147,7 @@
                         <br/>
                         <br/>
 
-                        <form method="post" action="/controlpanel.php" enctype="multipart/form-data">
+                        <form method="post" action="/controlpanel.php" enctype="multipart/form-data" novalidate="">
                             <div class="group">
                                 <input type="text" name="navItem_title" class="navItem_Title" required>
                                 <span class="highlight"></span>
@@ -136,37 +164,14 @@
                 </div> <?php //end of slide ?>
 
                 <div class="cpData-slide" cp-data-page="4">
-                    4eee Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Manages Portfolio, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </div> <?php //end of slide ?>
 
-                <div class="cpData-slide" cp-data-page="5">
-
-                    <div class="blog_create">
-                        <?php
-                        if(isSet($done)){
-                            echo $done;
-                        }?><br/><?php
-                        if(isSet($doneImg)){
-                            echo $doneImg;
-                        }?>
-                        <form method="post" action="/controlpanel.php" enctype="multipart/form-data">
-                            <div class="group">
-                                <input type="text" name="title" class="title" required>
-                                <span class="highlight"></span>
-                                <span class="bar"></span>
-                                <label for="user">Onderwerp</label>
-                            </div>
-
-                            <p>Image </p>
-                            <input type="file" name="imagefile" class="image"><br /><br />
-                            <textarea placeholder="Vul hier de content in" class="text_field" name='portfolio_content' required></textarea><br />
-                            <input type='submit' name="submitAddItem" value='Submit' />
-                        </form>
-
-
-
-                    </div>
-
+                <div class="cpData-slide" cp-data-page="2">
+                    Manages Pages, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div> <?php //end of slide ?>
+                <div class="cpData-slide" cp-data-page="6">
+                    Manages users, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </div> <?php //end of slide ?>
             </div>
         </div>

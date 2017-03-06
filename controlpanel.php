@@ -5,7 +5,7 @@
     $view = "views/controlpanel.php";
     $sectionActive = "controlpanel";
 
-    if(!isset($_SESSION['logged_in']) || ($_SESSION['logged_in'] == false) || ($_SESSION['gebruiker_rank'] == NULL)) {
+    if(!isset($_SESSION['logged_in']) || ($_SESSION['logged_in'] == false)) {
         header('Location: /login');
         exit();
     } else {
@@ -17,5 +17,4 @@
     }
 
     include_once $template;
-
 ?>

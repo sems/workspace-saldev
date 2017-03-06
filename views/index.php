@@ -4,7 +4,7 @@
         <div class="artikel">
             <h1> Welcome to my site!</h1>
             <hr >
-            <p> Nam accumsan sed sem quis mollis. Suspendisse eu scelerisque felis, et auctor erat.</p>
+            <p>This site is intended to be powered by some kind of CMS.</p>
 
         </div>
     </div>

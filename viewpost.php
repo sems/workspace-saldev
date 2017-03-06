@@ -5,7 +5,7 @@
     $view = "views/viewpost.php";
 
     try {
-        $stmt = $db->prepare('SELECT id, title, post, date_posted, portfolio_image FROM portfolio WHERE id = :id');
+        $stmt = $db->prepare('SELECT * FROM portfolio WHERE id = :id');
         $stmt->execute(array(':id' => $_GET['id']));
         $row = $stmt->fetch();
     } catch(PDOException $e) {

@@ -10,6 +10,7 @@
             <td>Title</td>
             <td>Date</td>
             <td>Image</td>
+            <td>Change</td>
             <td>Delete</td>
         </tr>
         <form method="post" action="/manage-portfolio.php">
@@ -22,6 +23,7 @@
                     echo "<td>".$pageRow['title']."<br></td>";
                     echo "<td>".$pageRow['date_posted']."<br></td>";
                     echo "<td>".$pageRow['portfolio_image']."<br></td>";
+                    echo "<td><a href='/editportfolio?id=".$pageRow['id']."'> Edit</a></td>";
                     echo "<td>".'<input type="checkbox" name="id_to_be_deleted" value='.$pageRow['id'].'></td>';
                 echo '</tr>';
             }

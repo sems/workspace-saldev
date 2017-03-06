@@ -10,7 +10,7 @@
         <br>
         <a href="mailto:info@semspanhaak.nl" target="_top">Send Mail</a>
         <br>
-        Woonplaats Raalte
+        <div class="fb-comments" data-href="http://sspanhaak.saldev.nl/contact/" data-numposts="2"></div>
         <br>
     </div>
 </div>

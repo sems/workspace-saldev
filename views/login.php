@@ -1,8 +1,12 @@
 <div class="container">
     <div class="title_Element">
-        <h2>Login SCMS<small>Enter the credentials</small></h2>
+        <h4>Login SCMS<small>Enter the credentials</small></h4>
     </div>
     <div class="login">
+        <?php
+        if(isSet($loginError)){
+            echo $loginError;
+        }?>
         <form method="post" action="/login_form.php">
 
             <div class="group">
