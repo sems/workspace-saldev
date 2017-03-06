@@ -36,12 +36,21 @@ nav {
                 color: $brand;
                 flex: 4;
                 text-align: left;
+
+                border: 0;
+                font-size: 100%;
+                font: inherit;
+                vertical-align: baseline;
             }
             &.nav-items {
                 font-size: 1.25em;
                 color: $option;
                 text-align: right;
                 border-bottom: 3px solid transparent;
+                border: 0;
+                font-size: 100%;
+                font: inherit;
+                vertical-align: baseline;
             }
             &.active {
                 border-bottom: 3px solid #CDDC39;

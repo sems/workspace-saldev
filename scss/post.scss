@@ -1,23 +1,20 @@
-.wrapper {
-    .post-head {
-        text-align: center;
-        font-size: 22px;
-        margin: 30px 3%;
-        text-decoration: none;
-    }
-    .post-footer {
-        text-align: center;
-        font-size: 16px;
-        margin: 30px 3%;
-        text-decoration: none;
+.post-container {
+    position: relative;
+    .img-cont {
+        position: absolute;
+        z-index: 0;
+        left: 0;
+        right: 0;
+        display: block;
     }
     .post-img {
-        display: inline-block;
-        padding: 0 1em 1em 0;
-        max-width:500px;
-        max-height:250px;
-        width: auto;
-        height: auto;
+        width: 100%;
+        user-drag: none;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
         @media screen and (max-width: 700px) {
             max-width:100%;
             max-height:100%;
@@ -25,14 +22,120 @@
             height: auto;
         }
     }
-    a {
-        color: #000;
-        cursor: pointer;
-        padding: 0 1em;
-        &:hover {
-            color: lighten(#000, 50%);
-            cursor: pointer;
-            transition: all .25s;
+    .img-cropper{
+        position: relative;
+        width: 100%;
+        height: 596px;
+        overflow: hidden;
+    }
+}
+.super {
+    width: 1100px;
+    margin: 0 auto;
+    zoom: 1;
+    &:after, &:before {
+        content: " ";
+        display: block;
+        height: 0;
+        overflow: hidden;
+    }
+    @media screen and (max-width: 700px) {
+        width: auto;
+    }
+    .share-buttons {
+
+        .share-inner-wrapper{
+            position: relative;
+            .share-button {
+                border: 1px solid rgba(0,0,0,0.2);
+                color: #FFF !important;
+                cursor: pointer;
+                display: inline-block;
+                font-size: 12px;
+                font-weight: bold;
+                padding: 8px 6px;
+                text-transform: uppercase;
+                a {
+                    color: #fff;
+                }
+            }
+            .share-button.facebook {
+                background-color: #236293;
+                &:hover {
+                    background-color: #19476a;
+                }
+            }
+            .share-button.twitter {
+                background-color: #38ace0;
+            }
+
         }
     }
+    header{
+        text-align: center;
+        color: #FFF;
+        height: 27.5em;
+        @media screen and (max-width: 700px) {
+            height: 12.5em;
+        }
+        .header-container {
+            position: relative;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            @media screen and (max-width: 700px) {
+                top: 20%;
+                -webkit-transform: translateY(-20%);
+                -ms-transform: translateY(-20%);
+                transform: translateY(-20%);
+            }
+            h1 {
+                font-size: 3.125em;
+                line-height: 1.25em;
+                text-transform: uppercase;
+                text-shadow: 3px 3px rgba(0,0,0,0.3);
+                margin: 0.125em 0 0.625em;
+            }
+            .post-author {
+                color: #ff0052;
+            }
+        }
+    }
+
+    .wrapper {
+        position: relative;
+        z-index: 1;
+        background: transparent;
+        .post-body{
+            position: relative;
+            background-color: #FFF;
+            padding: 20px 20px 20px 20px;
+        }
+        .post-head {
+            color: white;
+            line-height: 1.25em;
+            text-transform: uppercase;
+            text-shadow: 3px 3px rgba(0,0,0,0.3);
+            margin: 0.125em 0 0.625em;
+            text-decoration: none;
+        }
+        .post-footer {
+            text-align: center;
+            font-size: 16px;
+            margin: 30px 3%;
+            text-decoration: none;
+        }
+        a {
+            color: #000;
+            cursor: pointer;
+            padding: 0 1em;
+            &:hover {
+                color: lighten(#000, 50%);
+                cursor: pointer;
+                transition: all .25s;
+            }
+        }
+    }
+
 }

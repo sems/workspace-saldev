@@ -3,6 +3,9 @@
     .cp-tab {
         position: relative;
         padding-left: 192px;
+        @media screen and (max-width: 700px) {
+            padding-left: 0px;
+        }
         .tab-head-bar-con {
             position: absolute;
             left: 0;
@@ -28,7 +31,7 @@
                 }
                 .tab-head-step {
                     position: relative;
-                    padding: 24px 16px;
+                    padding: 16px;
                     transition: ease 0.4s;
                     opacity: 0.6;
                     cursor: pointer;
