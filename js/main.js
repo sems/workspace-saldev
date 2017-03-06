@@ -28,7 +28,6 @@ jQuery(document).ready(function($) {
     });
 });
 
-
 function switchContactSlide(currentContactSlide) {
     currentContactSlide = parseInt(currentContactSlide);
     var slideToShow = currentContactSlide;

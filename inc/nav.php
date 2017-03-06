@@ -1,7 +1,7 @@
 <nav>
     <ul>
-        <li class="brand brand-Desktop"><h1>Sem!</h1></a></li>
-        <li class="nav-items <?php if($sectionActive == "home") { echo "active";} ?> "><a href="/"><h1>Home</h1></a></li>
+        <li class="brand brand-Desktop"><h1>Sem!</h1></li>
+        <li class="nav-items <?php if($sectionActive == "home") { echo "active";} ?> "><a href="/">Home</a></li>
         <li class="nav-items <?php if($sectionActive == "about") { echo "active";} ?> "><a href="/about">About</a></li>
         <li class="nav-items <?php if($sectionActive == "portfolio") { echo "active";} ?> "><a href="/portfolio">Portfolio</a></li>
         <?php

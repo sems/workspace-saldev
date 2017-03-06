@@ -14,10 +14,10 @@
 
             $row = $stmt->fetch();
 
-            $hash = $row['user_pwd'];
-            $userName = $row['user_name'];
+            $hash          = $row['user_pwd'];
+            $userName      = $row['user_name'];
             $logInUserName = $row['name_user'];
-            $userRank = $row['user_rank'];
+            $userRank      = $row['user_rank'];
 
             if (password_verify($sWachtwoord, $hash)) {
                 $_SESSION['logged_in'] = true;
@@ -25,14 +25,14 @@
                 $_SESSION['gebruiker_rank'] = $userRank;
                 $_SESSION['logged_in_user'] = $logInUserName;
 
-                header('Refresh: 0.1; url=/');
+                header('Location: /controlpanel');
             } else {
-                header('Refresh: 3; url=/login');
+                header('Refresh: 0.5; url=/login');
                 echo 'Deze combinatie van gebruikersnaam en wachtwoord is niet juist!';
             }
         } else{
-            header('Refresh: 3; url=/login');
-            echo 'Een vereist veld bestaat niet!';
+            header('Refresh: 0.5; url=/login');
+            echo  'Een vereist veld bestaat niet!';
         }
     } else {
         // Terug naar het formulier

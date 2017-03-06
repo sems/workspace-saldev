@@ -5,6 +5,9 @@
     <link rel="shortcut icon" href="/img/logo_icon.png">
     <script src="/js/jquery.js"></script>
     <script type="text/javascript" src="/js/main.js"></script>
+    <script src="http://cloud.tinymce.com/stable/tinymce.min.js?apiKey=5e9bt6a1sbsf29dohk1ta17ifinmwcaycts1p7i8tvj7ysd6"></script>
+
+    <script>tinymce.init({ selector:'textarea' });</script>
 
     <link rel="stylesheet" type="text/css" href="/scss/main.min.css" />
     <?php
@@ -12,7 +15,7 @@
         $base = "/";
         $currentpage = $_SERVER['REQUEST_URI'];
         if($base == $currentpage) {
-                echo '<link rel="stylesheet" type="text/css" href="/css/landingpage.css" />';
+                echo '<link rel="stylesheet" type="text/css" href="/css/landingpage.min.css" />';
         } if($admin == $currentpage) {
             echo '<link rel="stylesheet" type="text/css" href="/css/forms.css" />';
         }

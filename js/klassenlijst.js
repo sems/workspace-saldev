@@ -18,10 +18,10 @@
             }
         } else {
             // De foutmelding
-            alert('Er ging iets fout met de klassenlijst! ' + response.error);
+            //alert('Er ging iets fout met de klassenlijst! ' + response.error);
         }
     }).fail(function(xhr, errorState, errorMessage) {
         // De opgeslagen lijst wordt weergegeven of de foutmelding
-        alert('Er ging iets fout met de klassenlijst!! ' + errorMessage);
+        //alert('Er ging iets fout met de klassenlijst!! ' + errorMessage);
     });
 });
