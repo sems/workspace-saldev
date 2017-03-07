@@ -20,6 +20,7 @@
             $fileHandleCont = fopen($url_destination, 'w') or die ("cant't open file");
             fwrite($fileHandleCont, $editedContent);
             fclose($fileHandleCont);
+            header('Location: /manage-pages');
         }
     } catch(PDOException $e) {
         //Gives the error message if possible.

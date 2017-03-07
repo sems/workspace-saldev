@@ -3,7 +3,7 @@
         <li class="brand brand-Desktop"><h1>Sem!</h1></li>
         <li class="nav-items <?php if($sectionActive == "home") { echo "active";} ?> "><a href="/">Home</a></li>
         <li class="nav-items <?php if($sectionActive == "about") { echo "active";} ?> "><a href="/about">About</a></li>
-        <li class="nav-items <?php if($sectionActive == "portfolio") { echo "active";} ?> "><a href="/portfolio">Portfolio</a></li>
+        <li class="nav-items <?php if($sectionActive == "portfolio") { echo "active";} ?> "><a href="/portfolio">Blog</a></li>
         <?php
             require_once "navitems.php";
             while($rowNav = $queryNav->fetch( PDO::FETCH_ASSOC )) {

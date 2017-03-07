@@ -25,7 +25,7 @@
                 //print_r($dbinsert);
                 $dbinsert->execute();
                 $done = "Het item is succesvol aangepast!";
-                header("Refresh:0");
+                header('Location: /manage-portfolio');
             } else {
                 $done = "Er gaat iets goed mis";
             }
