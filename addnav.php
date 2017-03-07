@@ -44,7 +44,7 @@ if( isset($_POST['nav_submit'] ) ) {
                 fclose($fileHandleCont);
 
 
-                if ($_POST['addNavbar'] == '1') {
+                if (isset($_POST['addNavbar'])) {
                     $navBarPlacement = 1;
 
                     $query = "INSERT INTO  `navitems`(`title`, `item_location`, `inNavBar`) VALUES (:navTitle, :itemLocation, :inNav)";

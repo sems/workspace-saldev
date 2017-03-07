@@ -3,7 +3,7 @@
     require_once('inc/config.php');
 
     try {
-        $queryNav = $db->prepare(" SELECT * FROM navitems WHERE inNavBar= 1 ");
+        $queryNav = $db->prepare(" SELECT * FROM navitems WHERE inNavBar= 1 AND deleted ='0' ");
 
         $queryNav-> execute();
 
