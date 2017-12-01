@@ -5,7 +5,6 @@
     ?>
     <body>
         <?php
-            include_once("analyticstracking.php");
             include_once("facebook.php");
             include("inc/nav.php");
             include $view;
